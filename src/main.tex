@@ -1,32 +1,39 @@
 \documentclass[uplatex]{jsarticle}
 
-\usepackage{float}
-\usepackage[dvipdfmx]{hyperref, graphicx}
-\usepackage{pxjahyper}
-\hypersetup{
-	colorlinks=false, % リンクに色をつけない設定
-	bookmarks=true, % 以下ブックマークに関する設定
-	bookmarksnumbered=true,
-	pdfborder={0 0 0},
-	bookmarkstype=toc,
-}
-\newcommand{\linedhref}[2]{\underline{\href{#1}{\emph{#2}}}}
+\input{setting}
+\title{\LaTeX のサンプルソース}
+\author{a11-green}
 
 \begin{document}
+\maketitle
+\tableofcontents
 
-吾輩は猫である。名前はまだ無い\cite{Soseki1905}。
+\newpage
+\section{はじめに}
+このミカンの大きさは1 \si{m}である\cite{Soseki1905}。
 
-どこで生れたかとんと見当がつかぬ。
-何でも薄暗いじめじめした所で
-ニャーニャー泣いていた事だけは記憶している。
-吾輩はここで始めて人間というものを見た。
-
+\section{基本文法}
+\subsection{図}
+図を張るためのソースはユーザスニペットとして登録している。1枚のみはる場合は次のようになる。
 \begin{figure}[H]
-	\begin{center}
-		\includegraphics[height=10cm]{img/natsume_soseki.jpeg}
-		\caption{夏目漱石の写真（引用元：\linedhref{https://ja.wikipedia.org/wiki/\%E5\%A4\%8F\%E7\%9B\%AE\%E6\%BC\%B1\%E7\%9F\%B3}{夏目漱石 - Wikipedia}）}
-	\end{center}
+	\centering
+	\includegraphics[width=0.5\textwidth]{figure/natsume_soseki.jpeg}
+	\caption{夏目漱石の写真\cite{Soseki1905}。あああああああああああああああああああああああああああああああ}
+	\label{fig:夏目漱石の写真}
 \end{figure}
+
+
+\subsection{数式}
+連続の式は\eref{mass-conservation}のように表される。
+式の参照について、式のラベル名にeq:をつけることで、erefコマンドによりeq:の後の文字列を指定することで式（・）として参照できるようにしている。
+またよく使う偏微分はpdiffコマンドで簡単に記述できるようにしている。
+詳しくはソースコードを参照されたい。
+\begin{align}
+	\pdiff{1}{u}{x} + \pdiff{1}{v}{y} + \pdiff{1}{w}{z} = 0
+	\label{eq:mass-conservation}
+\end{align}
+
+
 
 \bibliography{ref}
 \bibliographystyle{junsrt}

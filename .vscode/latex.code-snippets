@@ -1,0 +1,15 @@
+{
+    "figure 1": {
+		"scope": "tex, latex",
+		"prefix": "fig1",
+		"body": [
+			"\\begin{figure}",
+			"\t\\centering",
+            "\t\\includegraphics[width=0.9\\textwidth]{figure/$1}",
+            "\t\\caption{$2}",
+            "\t\\label{$3}",
+            "\\end{figure}"
+		],
+		"description": "Figure 1"
+	}
+}
