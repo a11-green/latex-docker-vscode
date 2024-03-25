@@ -1,20 +1,11 @@
 # About This Repository
 
 DockerとVSCodeでLaTeX環境を爆速で構築するためのテンプレート。
-[nukopy さんのリポジトリ](https://github.com/nukopy/latex-in-docker-on-vscode)をもとに作成。
-
 VSCodeのdevcontainerを用いて、ローカルにLaTeX環境を構築することなく、docker上の環境でLaTeX文書をビルドできるようにする。
-
-以下の Docker イメージをベースとしている。
-
-- GitHub: [nukopy/ubuntu-texlive-ja](https://github.com/nukopy/ubuntu-texlive-ja)
-- Docker Hub: [nukopy/ubuntu-texlive-ja](https://hub.docker.com/repository/docker/nukopy/ubuntu-texlive-ja)
-
-TeXLiveのバージョンは2022。  
+[being24さんのDockerイメージ、Dockerfile](https://github.com/being24/latex-docker/tree/master)と、[nukopy さんのテンプレート](https://github.com/nukopy/latex-in-docker-on-vscode)をもとに作成。
 ビルドにはlatexmkを用いている。
 LaTeX Workshopの拡張もdevcontainerでインストールされるようにしている。
 
-なお、ライセンスはMITライセンスに準拠します。
 
 # Getting Started
 
