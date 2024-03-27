@@ -35,5 +35,25 @@
             "\\end{figure}"
 		],
 		"description": "Two Figure aligned"
-	}
+	},
+	"table": {
+		"scope": "tex, latex",
+		"prefix": "table",
+		"body": [
+			"\\begin{table}[H]",
+			"\t\\centering",
+			"\t\\caption{$1}",
+			"\t\\label{tab:abc}",
+			"\t\\begin{tabular}{lccc}",
+			"\t\t\\Hline{1.5pt}",
+			"\t\tNo. &  &  &  \\\\\\\\",
+			"\t\t\\hline",
+			"\t\t &  &  &  \\\\\\\\",
+			"\t\t &  &  &  \\\\\\\\",
+			"\t\t\\hline",
+			"\t\\end{tabular}",
+			"\\end{table}",
+		],
+		"description": "Table"
+	},
 }

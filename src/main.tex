@@ -18,6 +18,14 @@
 \section{基本文法}
 \subsection{文と数式}
 文章は日本語で書くことができる\footnote{注釈をフッターに記述することもできる。}。
+箇条書きはitemize文ややenumerate文を用いる。
+\begin{itemize}
+	\item 廣ク會議ヲ興シ、萬機公󠄁論ニ決スヘシ
+	\item 上下心ヲ一ニシテ、盛󠄁ニ經綸ヲ行フヘシ
+	\item 官武一途󠄁、庻民ニ至ル迠、各其志ヲ遂󠄂ケ、人心ヲシテ倦マサラシメン事ヲ要󠄁ス
+	\item 舊來ノ陋習󠄁ヲ破リ、天地ノ公󠄁道󠄁ニ基クヘシ
+	\item 智識ヲ世界ニ求メ、大ニ皇基ヲ振起󠄁スヘシ
+\end{itemize}
 また文章を枠で囲む場合はitembox文などを利用することができる\cite{itembox}：
 \begin{itembox}[l]{Fermatの最終定理}
 3以上の自然数$n$について$x^n+y^n=z^n$となる自然数の組$(x,y,z)$は存在しない。
@@ -69,6 +77,29 @@ label文によって図にラベルを付ける場合はfig:を接頭辞とし�
 
 \subsection{表}
 
+最も単純な表は\tabref{abc}のように記載できる。
+label文によって表にラベルを付ける場合はtab:を接頭辞として付ける。
+このとき表の参照はtab:おあとの文字列を自作関数のtabref文で指定することで表（・）として参照できる。
+表の罫線の太さを変えるために、自作関数のHlineを用意している。
+Hline\{1.5pt\}のように記述することで任意の太さの罫線を使用することができる。
+\begin{table}[H]
+	\centering
+	\caption{アルファベットとギリシャ文字の対応関係。}
+	\label{tab:abc}
+	\begin{tabular}{lccc}
+		\Hline{1.5pt}
+		No. & 1列目 & 2列目 & 3列目 \\
+		\hline
+		アルファベット大文字 & A & B & C \\
+		ギリシャ文字 & $\alpha$ & $\beta$ & $\gamma$ \\
+		\hline
+	\end{tabular}
+\end{table}
+
+
+
+
+
 
 
 \bibliography{ref}
@@ -79,5 +110,13 @@ label文によって図にラベルを付ける場合はfig:を接頭辞とし�
 記述内容は例えばarXivなどであれば用意されているためそれをそのまま転記すればよい。
 mendeleyやpaperpileなどからまとめて自動作成するようにしておけばさらに便利である。
 スタイルについては論文誌などで指定があればそれに従い、特に指定がなければお気に入りのものを探すとよい。
+
+
+\newpage
+\appendix
+
+\section{付録}
+付録の章番号はアルファベットで記述される。
+
 
 \end{document}
