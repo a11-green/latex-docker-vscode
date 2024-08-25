@@ -1,10 +1,12 @@
 # About This Repository
 
-DockerとVSCodeでLaTeX環境を爆速で構築するためのテンプレート。
-VSCodeのdevcontainerを用いて、ローカルにLaTeX環境を構築することなく、docker上の環境でLaTeX文書をビルドできるようにする。
-[being24さんのDockerイメージ、Dockerfile](https://github.com/being24/latex-docker/tree/master)と、[nukopy さんのテンプレート](https://github.com/nukopy/latex-in-docker-on-vscode)をもとに作成。
-ビルドにはlatexmkを用いている。
-LaTeX Workshopの拡張もdevcontainerでインストールされるようにしている。
+DockerとVSCodeでLaTeX環境を爆速で構築するためのテンプレートです。
+VSCodeのdevcontainerを用いて、ローカルにLaTeX環境を構築することなく、docker上の環境でLaTeX文書をビルドできるようにしてます。
+being24さんの[Dockerイメージ](https://github.com/being24/latex-docker/tree/master)と[テンプレート](https://github.com/being24/latex-template-ja)をもとに自分に不要なところを消したりして作成しています。
+ので、詳細は上記のリポジトリのREADMEなどを参照してください。
+Dockerイメージはそのまま使ってもよかったが、環境変数を埋め込めるようにDockerfileで上記イメージをベースにDockerfileでBuildするようにしています。
+
+LaTeX Workshopの拡張もdevcontainerでインストールされるようにしています。
 
 
 # Getting Started
@@ -19,7 +21,7 @@ LaTeX Workshopの拡張もdevcontainerでインストールされるようにし
   なお、LaTeX Workshopはdevcontainerでインストールするため、入れていなくてもいい（入れていてもいい）。
 - Git   
   いれてなくても使えなくないが、入れておいたほうが楽。
-- Docker、Docker Compose  
+- Docker、~~Docker Compose~~
   WSL2上にインストールし、sudoなしでdockerが実行できるようにしておく。
 
 
@@ -27,24 +29,13 @@ LaTeX Workshopの拡張もdevcontainerでインストールされるようにし
 
 環境構築手順は以下の通り。
 
-1. 本リポジトリの `Use this template` ボタンをクリックし、新しくリポジトリを作成する
-2. 作成したリポジトリを clone し、VSCode で開く
 
-   ```sh
-   git clone [Your Repository URL]
-   cd [Your Repository Name]
-   ```
-
-3. cmd + shift + P（`Show All Commands` ショートカット）で **"Remote-Containers: Reopen in Container"** を検索し実行すると、Docker コンテナのビルドが実行され、リモート環境を開いた状態でエディタが起動する
-   - 別途パッケージが必要な場合、`.devcontainer/Dockerfile` を編集してからビルドする
-4. PDF プレビューを開く：`src/main.tex` を開いた状態にし、cmd + shift + P で **"LaTeX Workshop: View LaTeX PDF file"** を検索し実行すると、画面右側に LaTeX 文書から生成された PDF が表示される（エディタ右上の虫眼鏡ボタンを押してもプレビューを表示できる）。
 
 # フォルダ構成
 ## .devcontainer
 コンテナに関する情報は`.devcontainer`フォルダの中に記載する。
 - devcontainer.json  
 - Dockerfile
-- docker-dompose.yml
 
 ## .vscode
 VSCodeのユーザ設定およびユーザスニペットは`.vscode`フォルダの中のファイルに記載する。
@@ -54,7 +45,8 @@ VSCodeのユーザ設定およびユーザスニペットは`.vscode`フォル�
 - latex.code-snippets  
   ユーザスニペット。
 
-## src
-LaTeXのソースコード。
-プリアンブルは`setting.tex`に分けて記載している。
-`main.tex`は
+## 
+- main.tex  
+メインのソースコード。
+- setting.tex  
+プリアンブルのソースコード。

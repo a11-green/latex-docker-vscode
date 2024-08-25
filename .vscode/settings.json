@@ -1,47 +1,26 @@
-{   
-    "terminal.integrated.shell": "/bin/bash",
-    "latex-workshop.latex.autoBuild.interval": 0,
-    "latex-workshop.latex.autoBuild.run": "onFileChange",
-    "latex-workshop.latex.autoClean.run": "onBuilt",
-    "latex-workshop.latex.recipes": [
-        {
-        "name": "latexmk 🔃",
-        "tools": [
-            "latexmk"
-        ]
-        }
-    ],
+{
     "latex-workshop.latex.tools": [
         {
-        "name": "latexmk",
-        "command": "latexmk",
-        "args": [
-            "-silent",
-            "%DOC%"
-        ],
-        "env": {}
+            "name": "latexmk",
+            "command": "latexmk",
+            "args": [
+                "%DOCFILE_EXT%"
+            ]
+        },
+    ],
+    "latex-workshop.latex.recipes": [
+        {
+            "name": "compile",
+            "tools": [
+                "latexmk",
+            ]
         }
     ],
-    // formatter
-    "[latex]": {
-        "editor.formatOnSave": true,
-        "editor.formatOnPaste": true,
-        "editor.defaultFormatter": "James-Yu.latex-workshop"
-    },
-    "latex-workshop.latexindent.path": "/usr/local/texlive/2022/bin/x86_64-linux/latexindent",
-    "latex-workshop.latexindent.args": [
-        "%TMPFILE%",
-        "-c=%DIR%/",
-        "-y=defaultIndent: '%INDENT%'"
-    ],
-    "latex-workshop.bibtex-format.sort.enabled": true,
-    "latex-workshop.bibtex-fields.sort.enabled": true,
-    // other settings
-    "latex-workshop.message.update.show": false,
-    "latex-workshop.synctex.afterBuild.enabled": true,
+    "latex-workshop.latex.autoBuild.run": "never",
     "latex-workshop.view.pdf.viewer": "tab",
+    "latex-workshop.latex.autoClean.run": "onBuilt",
     "latex-workshop.latex.clean.fileTypes": [
-        // "*.aux",
+        "*.aux",
         "*.bbl",
         "*.blg",
         "*.idx",
@@ -70,7 +49,14 @@
         "*.fls",
         "*.toc",
         "*.bcf",
+        "*.dvi",
         //"*.log",
         //"*/*.log"
     ],
+    "latex-workshop.latexindent.path": "sh",
+    "latex-workshop.latexindent.args": [
+        "./bin/linter.sh",
+    ],
+    "editor.wordSeparators": "./\\()\"'-:,.;<>~!@#$%^&*|+=[]{}`~?．。，、（）「」［］｛｝《》てにをはがのともへでや",
+    "editor.formatOnSave": false
 }

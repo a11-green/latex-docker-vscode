@@ -3,9 +3,7 @@
 {
 	"name": "LaTeX",
 	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
-	"build": {
-		"dockerfile": "Dockerfile"
-	},
+	"image": "ghcr.io/being24/latex-docker",
 	"customizations": {
 		"vscode": {
 			"extensions": [
