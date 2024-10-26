@@ -8,6 +8,8 @@
 \usepackage[top=20truemm,bottom=20truemm,left=25truemm,right=25truemm]{geometry}
 \usepackage{here}
 \usepackage{ascmac} % 枠付き文章
+\usepackage{plistings}
+\usepackage{color}
 
 
 \hypersetup{
@@ -50,3 +52,34 @@
 \captionsetup[table]{font=small} %small=9pt,footnotesize=8pt}
 \abovecaptionskip=5pt
 \belowcaptionskip=0pt
+
+
+% listingsの設定
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolor}{rgb}{0.95,0.95,0.92}
+\lstset{
+    backgroundcolor=\color{backcolor},  
+    rulecolor={\color[gray]{0.5}},
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    basicstyle=\ttfamily\footnotesize,,
+    frame=single,
+    breaklines=true,    % 行が長くなった場合自動改行
+    keepspaces=true,   
+    breakindent=12pt,   % 自動改行時のインデント  
+    columns=fixed,      % 文字の間隔を統一
+    basewidth=0.5em,    % 文字の横のサイズを小さく
+    numbers=left,       % 行数の位置
+    numberstyle={\scriptsize},  % 行数のフォント
+    numbersep=5pt,   
+    stepnumber=1,       % 行数の増間
+    numbersep=2zw,      % 行数の余白
+    xrightmargin=1zw,   % 左の余白
+    xleftmargin=2zw,    % 右の余白
+    showspaces=false,  
+    showstringspaces=false, 
+    showtabs=false, 
+}

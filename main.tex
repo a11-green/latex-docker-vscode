@@ -98,18 +98,32 @@ Hline\{1.5pt\}のように記述することで任意の太さの罫線を使用
 
 
 
+\subsection{ソースコード}
+ソースコードはplistings.styを用いて記述することができる。
+\begin{lstlisting}[language=sh, caption=hello world]
+echo "hello world"
+\end{lstlisting}
 
-
-
-
-\bibliography{ref}
-\bibliographystyle{junsrt}
-% \bibliographystyle{ieeepes}
+\subsection{参考文献}
 参考文献はbibtexによって記述する。
 本文中では参照するbibファイルと表示するスタイルを指定する。
 記述内容は例えばarXivなどであれば用意されているためそれをそのまま転記すればよい。
 mendeleyやpaperpileなどからまとめて自動作成するようにしておけばさらに便利である。
 スタイルについては論文誌などで指定があればそれに従い、特に指定がなければお気に入りのものを探すとよい。
+
+
+\section{その他}
+\subsection{差分ファイルの作成}
+\LaTeX 文書の差分作成にはlatexdiffが用いられる。
+本テンプレートでは文書がGitによって管理されていることを前提として、現在のソースファイルと最新のcommit時のソースファイルの差分ファイルをlatexdiffによって作成するスクリプトをmkdiff.shとして用意した。
+また本スクリプトと作成した差分ファイルのコンパイルを実行する一連の動作を、VSCode拡張のLatex Workshopのrecipeとして登録している。
+詳しくは.vscode/setting.jsonを参照されたい。
+使用方法はLatex WorkshopのCOMMANDS/Build Latex project/Recipe: compile-diffを実行するだけである。
+
+\bibliography{ref}
+\bibliographystyle{junsrt}
+% \bibliographystyle{ieeepes}
+
 
 
 \newpage

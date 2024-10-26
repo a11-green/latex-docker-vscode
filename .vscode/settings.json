@@ -7,12 +7,40 @@
                 "%DOCFILE_EXT%"
             ]
         },
+        {
+            "name": "latexmk-diff",
+            "command": "latexmk",
+            "args": [
+                "diff.tex" 
+            ]
+        },
+        {
+            "name": "generate-diff",
+            "command": "bash",
+            "args": ["./mkdiff.sh"]
+        },
+        {
+            "name": "latexmk-diff-cleanup",
+            "command": "latexmk",
+            "args": [
+                "-c",
+                "diff.tex"
+            ]
+        }
     ],
     "latex-workshop.latex.recipes": [
         {
             "name": "compile",
             "tools": [
                 "latexmk",
+            ]
+        },
+        {
+            "name": "compile-diff",
+            "tools": [
+                "generate-diff",
+                "latexmk-diff",
+                "latexmk-diff-cleanup"
             ]
         }
     ],
