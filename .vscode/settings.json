@@ -81,10 +81,6 @@
         //"*.log",
         //"*/*.log"
     ],
-    "latex-workshop.latexindent.path": "sh",
-    "latex-workshop.latexindent.args": [
-        "./bin/linter.sh",
-    ],
     "editor.wordSeparators": "./\\()\"'-:,.;<>~!@#$%^&*|+=[]{}`~?．。，、（）「」［］｛｝《》てにをはがのともへでや",
     "editor.formatOnSave": false
 }

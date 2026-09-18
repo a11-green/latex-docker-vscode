@@ -1,3 +1,4 @@
-FROM  ghcr.io/being24/latex-docker
+FROM ghcr.io/being24/latex-docker
 
-ENV test hoge
+# Add project-specific environment variables here if needed, e.g.:
+# ENV TEXMFHOME=/workdir/.texmf
