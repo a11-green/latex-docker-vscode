@@ -8,7 +8,7 @@ BIB_SRCS=$(wildcard ./*.bst) $(wildcard ./*.bib)
 TEX_SRCS=$(wildcard ./*.tex) $(wildcard */*.tex)
 
 # Figures
-FIG_DIR=figures
+FIG_DIR=figure
 FIG_PNG=$(wildcard $(FIG_DIR)/*.png)
 FIG_JPG=$(wildcard $(FIG_DIR)/*.jpg) $(wildcard $(FIG_DIR)/*.JPG) $(wildcard $(FIG_DIR)/*.jpeg)
 FIG_EPS=$(wildcard $(FIG_DIR)/*.eps)
